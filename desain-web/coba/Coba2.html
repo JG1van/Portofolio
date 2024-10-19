@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teras Merapi Camping</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        background-color: #1c2331;
+        color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1rem;
+      }
+      .hero {
+        background-image: url("../PERTEMUAN\ 3/WW.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+      .hero-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+      }
+      .btn {
+        background-color: #1f1456;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .section {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        max-width: 1200px; /* Menentukan lebar maksimal */
+        margin: auto; /* Agar berada di tengah */
+        padding: 0 2rem; /* Memberikan padding kiri dan kanan */
+      }
+
+      .section-content {
+        flex: 1;
+        min-width: 300px;
+        padding: 1rem 2rem; /* Memberikan padding di kiri dan kanan konten */
+        margin: 2rem; /* Memberikan jarak atas bawah */
+      }
+
+      .section img {
+        width: 50%;
+        max-width: 500px;
+        height: auto;
+        object-fit: cover;
+        margin: 0 1rem; /* Menambahkan jarak antara gambar dan konten teks */
+      }
+      .contact {
+        background-color: #1c2331;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      .contact h2 {
+        margin-bottom: 1rem;
+      }
+      .contact p {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4rem;
+        margin-top: 2rem;
+      }
+      .contact-item {
+        border: 1px solid white;
+        padding: 2rem;
+        width: calc(20% - 2rem);
+        min-width: 200px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-item h3 {
+        margin-bottom: 0.5rem;
+      }
+      .visit-us {
+        padding: 4rem 2rem;
+        background-color: #f5f5f5;
+      }
+      .visit-us h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .map-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      .map {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .map iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .footer {
+        background-color: #1c2331;
+        color: white;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+      }
+      .social-icons a {
+        color: white;
+        margin-right: 1rem;
+      }
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column;
+        }
+        .section img {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .section-content {
+          width: 100%;
+        }
+        .section:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+      }
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column;
+          padding: 0 1rem; /* Lebih kecil pada layar mobile */
+        }
+        .section img {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .section-content {
+          width: 100%;
+        }
+        .section:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+      }
+      @media (max-width: 768px) {
+        .visit-us {
+          padding: 3rem 1rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">LOGO</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#package">Package</a>
+        <a href="#" class="btn">Reservasi</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+          luctus nec ullamcorper mattis, pulvinar dapibus leo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <img src="WW.jpg" alt="Teras Merapi" />
+      <div class="section-content">
+        <h2>Sejarah Teras Merapi</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+          aspernatur similique ut illum est ad eaque laborum veritatis ipsam.
+          Facilis libero vitae molestias consequatur, officiis atque officia
+          autem inventore eligendi! Tempore omnis unde consequuntur fuga, neque
+          at accusamus quod error nemo mollitia! Inventore maiores molestias
+          ipsa cum autem nostrum aspernatur enim unde illo corrupti natus,
+          voluptate incidunt odio reprehenderit perspiciatis.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-content">
+        <h2>Wisata Merapi</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt nam ab
+          rem. Voluptatem accusamus laudantium est nemo, voluptatibus
+          perferendis animi dolores debitis ipsum itaque quas consequatur
+          molestiae laboriosam cum temporibus. Nisi perspiciatis laudantium quia
+          impedit distinctio quidem possimus molestiae! Consequuntur vero quasi,
+          nemo cupiditate magnam ratione autem culpa accusantium placeat
+          voluptatibus aliquam laudantium animi pariatur maxime repellendus
+          praesentium eveniet. Unde.
+        </p>
+      </div>
+      <img src="WW.jpg" alt="Wisata Merapi" />
+    </section>
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eveniet
+        molestias sapiente ipsa velit incidunt rerum quos. Laboriosam
+        dignissimos, sunt laudantium reprehenderit quam repudiandae magnam
+        quaerat facilis quisquam qui nam. Reprehenderit, accusantium consectetur
+        suscipit quaerat impedit a sint porro. Temporibus, voluptates assumenda
+        corrupti at sunt similique velit corporis necessitatibus, neque
+        provident qui aliquam labore. Soluta error nisi temporibus consequuntur
+        repudiandae.
+      </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3>Address</h3>
+          <p>Jln. Kaliurang Desa ambal, Sleman, Yogyakarta 58982</p>
+        </div>
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <p>+628222319133</p>
+        </div>
+        <div class="contact-item">
+          <h3>Email</h3>
+          <p>Terasmerapi@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit-us">
+      <h2>Visit Us</h2>
+      <div class="map-container">
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1204013614185!2d110.4234533!3d-7.7813889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59c7d7843997%3A0x8e3e758d1de37ec9!2sMerapi%20Volcano!5e0!3m2!1sen!2sid!4v1633925604000!5m2!1sen!2sid"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Header and other sections remain unchanged -->
+
+    <footer class="footer">
+      <div class="footer-section">
+        <h3>Teras Merapi</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto beatae
+          hic doloribus, repellendus veniam rerum unde dicta ex voluptatem
+          incidunt ad minima possimus sed cumque ipsa itaque dolorem odit nihil?
+          Totam repellendus fugiat sed voluptatem nobis eum excepturi.
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="#package">Package</a></p>
+        <p><a href="#" class="btn">Reservasi</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>📞 +628180289912</p>
+        <p>✉️ Terasmerapi@gmail.com</p>
+        <p>🏠 Jln Kaliurang, Teras merapi 827 Sleman, Yogyakarta</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </footer>
+    <div
+      style="
+        background-color: #ffffff;
+        color: black;
+        text-align: center;
+        padding: 1rem;
+      "
+    >
+      © 2022 All Rights Reserved by Kelompok 1.
+    </div>
+
+    <script>
+      // You can add JavaScript here for any interactive elements
+      // For example, smooth scrolling for navigation links:
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

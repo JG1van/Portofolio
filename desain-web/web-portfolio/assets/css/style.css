@@ -1,0 +1,894 @@
+/* ----- POPPINS FONT Link ----- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ----- VARIABLES ----- */
+:root {
+  --warna-1: black;
+  --warna-2: white;
+  --warna-3: #222831;
+  --warna-4: #393E46;
+  --warna-5: #00ADB5;
+
+
+  /* Shadow and Hover Effects */
+  --first-shadow-color: rgba(255,
+      255,
+      255,
+      0.1);
+  /* Shadow putih lembut untuk menambah kedalaman */
+  --second-shadow-color: rgba(0,
+      0,
+      0,
+      0.7);
+  /* Shadow hitam pekat untuk mempertegas elemen visual */
+}
+
+/* ----- BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----- SMOOTH SCROLL ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* ---##-- REUSABLE CSS --##--- */
+
+/* ----- GLOBAL BUTTON DESIGN ----- */
+.btn {
+  font-weight: 500;
+  padding: 12px 20px;
+  background: #efefef;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn>i {
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background: var(--warna-5);
+  color: var(--warna-2);
+}
+
+/* ----- GLOBAL ICONS DESIGN ----- */
+i {
+  font-size: 16px;
+}
+
+/* ------- BASE -------- */
+body {
+  background-color: var(--warna-3);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(0,636,297)'%3E%3Cstop offset='0' stop-color='%23222831'/%3E%3Cstop offset='1' stop-color='%23222831'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='300' height='250' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.2'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+
+}
+
+/* ----- NAVIGATION BAR ----- */
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  background: var(--warna-3);
+  padding-inline: 9vw;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.nav-logo {
+  position: relative;
+}
+
+.nav-name {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--warna-2);
+}
+
+.nav-logo span {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  font-size: 5em;
+  color: var(--warna-5);
+}
+
+.nav-menu,
+.nav_menu_list {
+  display: flex;
+}
+
+.nav-menu .nav_list {
+  list-style: none;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--warna-5);
+  font-weight: 500;
+  padding-inline: 15px;
+  margin-inline: 20px;
+}
+
+.nav-menu-btn {
+  display: none;
+}
+
+.nav-menu-btn i {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.active-link {
+  position: relative;
+  color: var(--warna-5);
+  transition: 0.3;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--warna-5);
+  border-radius: 50%;
+}
+
+/* ----- WRAPPER DESIGN ----- */
+.wrapper {
+  padding-inline: 10vw;
+}
+
+/* ----- FEATURED BOX ----- */
+.featured-box {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  min-height: 700px;
+}
+
+/* ----- FEATURED TEXT BOX ----- */
+.featured-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 80vh;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 20px;
+}
+
+.featured-text-card span {
+  background: var(--warna-4);
+  color: var(--warna-2);
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.featured-name {
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--warna-2);
+  margin-block: 20px;
+}
+
+.typedText {
+  text-transform: capitalize;
+  color: var(--warna-2);
+}
+
+.featured-text-info {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: var(--warna-2);
+  background: var(--warna-4);
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.featured-text-btn {
+  display: flex;
+  gap: 20px;
+}
+
+.featured-text-btn>.blue-btn {
+  background: var(--warna-5);
+  color: var(--warna-2);
+}
+
+.featured-text-btn>.blue-btn:hover {
+  background: var(--warna-4);
+}
+
+.social_icons {
+  display: flex;
+  margin-top: 5em;
+  gap: 30px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  background-color: var(--warna-2);
+}
+
+.icon:hover {
+  color: var(--warna-5);
+}
+
+/* ----- FEATURED IMAGE BOX ----- */
+.featured-image {
+  display: flex;
+  justify-content: right;
+  align-content: center;
+  min-height: 80vh;
+  width: 50%;
+}
+
+.image {
+  margin: auto 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 55% 45% 55% 45%;
+  overflow: hidden;
+  animation: imgFloat 1s ease-in-out infinite;
+}
+
+.image img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+
+@keyframes imgFloat {
+  50% {
+    transform: translateY(10px);
+    border-radius: 45% 55% 45% 55%;
+  }
+}
+
+.scroll-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--warna-5);
+  background: var(--warna-2);
+  border-radius: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.scroll-btn i {
+  font-size: 20px;
+}
+
+/* ----- MAIN BOX ----- */
+.section {
+  padding-block: 5em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+}
+
+.col {
+  display: flex;
+  width: 50%;
+}
+
+/* -- ## --- RESUABLE CSS -- ## -- */
+.top-header {
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+.top-header h1 {
+  font-weight: 600;
+  color: var(--warna-5);
+  margin-bottom: 10px;
+}
+
+.top-header span {
+  color: #999;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--warna-5);
+  margin-bottom: 15px;
+}
+
+/* ----- ABOUT INFO ----- */
+.about-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 30px 70px;
+  padding-inline: 20px;
+  width: 100%;
+  background: var(--warna-4);
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  border-radius: 20px;
+
+}
+
+.about-info p {
+  text-align: center;
+  font-size: 15px;
+  color: var(--warna-2);
+
+}
+
+.about-btn button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: var(--warna-5);
+  color: var(--warna-2);
+  border-radius: 30px;
+}
+
+.about-btn button:hover {
+  background: var(--warna-4);
+}
+
+/* ----- ABOUT / SKILLS BOX ----- */
+.skills-box {
+  margin: 10px;
+}
+
+.skills-header {
+  margin-bottom: 30px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skills-list span {
+  font-size: 14px;
+  background: var(--warna-5);
+  color: var(--warna-2);
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+/* ----- PROJECTS BOX ----- */
+.project-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  height: 250px;
+  background: var(--warna-2);
+  border-radius: 20px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  overflow: hidden;
+}
+
+.project-box>i {
+  font-size: 50px;
+  color: #00b5e7;
+  margin-bottom: 25px;
+}
+
+.project-box label {
+  font-size: 15px;
+  color: #777;
+}
+
+.project-box::after,
+.contact-info::after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  background: var(--warna-5);
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.project-box:hover.project-box::after,
+.contact-info:hover.contact-info::after {
+  bottom: 0;
+}
+
+.project-box:hover.project-box i,
+.project-box:hover.project-box>h3,
+.project-box:hover.project-box>label {
+  color: var(--warna-2);
+  z-index: 2;
+}
+
+/* ----- CONTACT BOX ----- */
+.contact-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  width: 100%;
+  height: 315px;
+  background: var(--warna-5);
+  border-radius: 10px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  overflow: hidden;
+}
+
+.contact-info>h2 {
+  color: var(--warna-2);
+  margin-bottom: 20px;
+}
+
+.contact-info>p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--warna-2);
+  margin-block: 5px;
+}
+
+.contact-info p>i {
+  font-size: 18px;
+}
+
+.contact-info::after {
+  background: var(--warna-2);
+}
+
+.contact-info:hover.contact-info h2,
+.contact-info:hover.contact-info p,
+.contact-info:hover.contact-info i {
+  color: #777;
+  z-index: 2;
+}
+
+/* ----- CONTACT FORM ----- */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-field {
+  width: 50%;
+  height: 55px;
+  background: transparent;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding-inline: 20px;
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  background: transparent;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding: 15px 20px;
+  outline: none;
+  resize: none;
+}
+
+.form-button>.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--warna-5);
+  color: var(--warna-2);
+}
+
+.form-button>.btn:hover {
+  background: #00b5e7;
+}
+
+.form-button i {
+  font-size: 18px;
+  rotate: -45deg;
+}
+
+/* ----- FOOTER BOX ----- */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 30px;
+
+  padding-block: 40px 60px;
+  background-color: var(--warna-2);
+
+}
+
+.top-footer p {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.middle-footer .footer-menu {
+  display: flex;
+}
+
+.footer_menu_list {
+  list-style: none;
+}
+
+.footer_menu_list a {
+  text-decoration: none;
+  color: var(--warna-5);
+  font-weight: 500;
+  margin-inline: 20px;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 30px;
+}
+
+.bottom-footer {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
+@media only screen and (max-width: 1024px) {
+  .featured-text {
+    padding: 0;
+  }
+
+  .image,
+  .image img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
+@media only screen and (max-width: 900px) {
+  .nav-button {
+    display: none;
+  }
+
+  .nav-menu.responsive {
+    left: 0;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    min-height: 450px;
+    height: 90vh;
+    transition: 0.3s;
+  }
+
+  .nav_menu_list {
+    flex-direction: column;
+  }
+
+  .nav-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-box {
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .featured-text {
+    width: 100%;
+    order: 2;
+    justify-content: center;
+    align-content: flex-start;
+    min-height: 60vh;
+  }
+
+  .social_icons {
+    margin-top: 2em;
+  }
+
+  .featured-image {
+    order: 1;
+    justify-content: center;
+    min-height: 150px;
+    width: 100%;
+    margin-top: 65px;
+  }
+
+  .image,
+  .image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .about-info,
+  .contact-info {
+    width: 100%;
+  }
+
+  .project-container {
+    justify-content: center;
+  }
+
+  .project-box {
+    width: 80%;
+  }
+}
+
+/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+
+@media only screen and (max-width: 540px) {
+  .featured-name {
+    font-size: 40px;
+  }
+
+  .project-box {
+    width: 100%;
+  }
+
+  .form-inputs {
+    flex-direction: column;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+}
+
+.tutorial-table {
+  margin: 0 30px;
+  padding: 90px 0;
+  overflow-x: auto;
+}
+
+.tutorial-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--warna-2);
+  text-align: center;
+}
+
+.tutorial-table h2 {
+  font-size: 50px;
+  color: var(--warna-2);
+  text-align: center;
+  margin: 30px 0;
+  padding: 10px 0;
+  background-color: var(--warna-5);
+  border-radius: 0.5rem;
+}
+
+.tutorial-table table th,
+.tutorial-table table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: center;
+}
+
+.tutorial-table table th {
+  background-color: var(--warna-5);
+}
+
+.tutorial-table table td {
+  background-color: var(--warna-4);
+}
+
+@media (max-width: 768px) {
+  .tutorial-table table {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .tutorial-table h2 {
+    font-size: 32px;
+  }
+
+  .tutorial-table table th,
+  .tutorial-table table td {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutorial-table h2 {
+    font-size: 24px;
+  }
+
+  .tutorial-table table {
+    font-size: 12px;
+  }
+
+  .tutorial-table table th,
+  .tutorial-table table td {
+    padding: 2px;
+
+  }
+}
+
+
+/* Pengaturan tampilan body agar form berada di tengah halaman */
+.form-login-register {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Pengaturan container form login */
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pengaturan judul form */
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Pengaturan input text dan password */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  /* Lebar input 100% dari parent container */
+  padding: 10px;
+  /* Padding dalam input */
+  margin: 10px 0;
+  /* Jarak antar input */
+  border: 1px solid #ccc;
+  /* Border abu-abu pada input */
+  border-radius: 4px;
+  /* Membuat sudut input melengkung */
+}
+
+/* Pengaturan tombol submit dan reset */
+.login-container input[type="submit"],
+.login-container input[type="reset"] {
+  width: 48%;
+  /* Lebar tombol menjadi 48% agar dua tombol bisa berada dalam satu baris */
+  padding: 10px;
+  border: none;
+  /* Menghilangkan border default pada tombol */
+  border-radius: 4px;
+  /* Membuat sudut tombol melengkung */
+  background-color: var(--warna-5);
+  /* Warna latar tombol submit hijau */
+  color: var(--warna-2);
+  /* Warna teks tombol putih */
+  cursor: pointer;
+  /* Menampilkan pointer saat tombol di-hover */
+  margin-top: 10px;
+}
+
+/* Pengaturan warna tombol reset (warna merah) */
+.login-container input[type="reset"] {
+  background-color: #f44336;
+}
+
+/* Efek hover saat tombol diklik */
+.login-container input[type="submit"]:hover,
+.login-container input[type="reset"]:hover {
+  opacity: 0.9;
+  /* Mengubah transparansi saat hover */
+  background-color: var(--warna-4);
+}
+
+.sign-up-link {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.sign-up-link a {
+  color: #000;
+  font-weight: 600;
+}

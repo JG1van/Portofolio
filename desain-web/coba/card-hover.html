@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GevStack - Card Effect</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
+    /* Reset default margin, padding, dan box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set properti dasar untuk body */
+    body {
+      height: 100vh; /* Tinggi layar penuh */
+      background-color: #030b0d; /* Warna latar belakang */
+      display: grid; /* Layout grid untuk center item */
+      place-items: center; /* Pusatkan item */
+      font-family: "Inter", sans-serif; /* Font utama */
+      color: white; /* Warna teks default */
+    }
+
+    /* Grid wrapper untuk kartu */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+      grid-template-rows: repeat(2, auto); /* 2 baris */
+      gap: 20px; /* Jarak antar kartu */
+      width: 90vw; /* Lebar total grid */
+      max-width: 1000px; /* Batas maksimal lebar grid */
+    }
+
+    .card {
+      width: 100%; /* Sesuaikan dengan ukuran grid */
+      aspect-ratio: 1 / 0.7; /* Perbandingan lebar dan tinggi kartu */
+      border-radius: 8px; /* Sudut melengkung pada kartu */
+      position: relative; /* Untuk positioning elemen internal */
+      cursor: pointer; /* Ganti cursor saat hover */
+    }
+
+    .card .image-box {
+      width: 100%; /* Lebar penuh */
+      height: 100%; /* Tinggi penuh */
+      border-radius: inherit; /* Warisi border-radius dari parent */
+    }
+
+    .card .image-box img {
+      width: 100%; /* Lebar gambar menyesuaikan kotak */
+      height: 100%; /* Tinggi gambar menyesuaikan kotak */
+      object-fit: cover; /* Gambar menyesuaikan rasio kotak tanpa distorsi */
+      object-position: 50% 90%; /* Posisi gambar (50% lebar, 90% tinggi) */
+      border-radius: inherit; /* Warisi border-radius dari parent */
+      transition: 0.5s ease-in-out; /* Transisi halus saat hover */
+    }
+
+    .card::after {
+      content: ""; /* Pseudo-element kosong */
+      position: absolute; /* Posisi absolut di dalam .card */
+      inset: 0; /* Menyebar di seluruh kartu */
+      border: 2px solid white; /* Garis tepi putih */
+      border-radius: inherit; /* Warisi border-radius dari parent */
+      opacity: 0; /* Tidak terlihat awalnya */
+      transition: 0.4s ease-in-out; /* Transisi halus saat hover */
+    }
+
+    /* Efek hover pada gambar */
+    .card:hover img {
+      filter: grayscale(1) brightness(0.4); /* Ubah gambar jadi grayscale dan lebih gelap */
+    }
+
+    /* Efek hover pada border */
+    .card:hover::after {
+      opacity: 1; /* Munculkan pseudo-element */
+      inset: 20px; /* Kurangi ukuran inset */
+    }
+
+    .content {
+      width: 80%; /* Lebar konten dalam kartu */
+      position: absolute; /* Posisikan relatif terhadap .card */
+      top: 50%; /* Posisikan di tengah secara vertikal */
+      left: 50%; /* Posisikan di tengah secara horizontal */
+      transform: translate(
+        -50%,
+        -50%
+      ); /* Gunakan transformasi untuk benar-benar di tengah */
+      text-align: center; /* Teks rata tengah */
+    }
+
+    .content h2,
+    .content ul {
+      opacity: 0; /* Sembunyikan elemen awalnya */
+      transition: 0.4s 0.2s ease; /* Tambahkan transisi dengan delay */
+    }
+
+    .content h2 {
+      margin-bottom: 12px; /* Spasi bawah */
+      scale: 0.7; /* Perkecil ukuran awal */
+    }
+
+    .content p {
+      font-size: 28px; /* Ukuran font */
+      line-height: 1.5; /* Spasi antar baris */
+      color: white; /* Warna teks */
+      transform: translateY(10%); /* Geser teks ke bawah */
+    }
+
+    /* Elemen ul disembunyikan awalnya */
+    .content ul {
+      margin: 0; /* Hilangkan margin */
+      padding: 0; /* Hilangkan padding */
+      font-size: 14px; /* Ukuran teks */
+      color: #d1d1d1; /* Warna teks abu-abu terang */
+      display: none; /* Sembunyikan elemen ul */
+      text-align: left; /* Teks rata kiri */
+    }
+
+    /* Efek hover untuk menampilkan h2 */
+    .card:hover .content h2 {
+      scale: 1; /* Kembalikan ke skala normal */
+      opacity: 1; /* Buat terlihat */
+    }
+
+    /* Ketika hover, sembunyikan paragraf dan tampilkan ul */
+    .card:hover .content p,
+    .card:hover .content h1 {
+      display: none; /* Sembunyikan paragraf */
+    }
+
+    /* Efek hover untuk menampilkan ul */
+    .card:hover .content ul {
+      display: block; /* Tampilkan ul */
+      opacity: 1; /* Buat terlihat */
+    }
+  </style>
+  <body>
+    <div class="card-container">
+      <div class="card">
+        <div class="image-box">
+          <img src="GAMBAR PAKET A.webp" alt="Paket Glamping" />
+        </div>
+        <div class="content">
+          <h2>PAKET GLAMPING TERAS MERAPI A</h2>
+          <h1>PAKET GLAMPING A</h1>
+          <p>Klik untuk melihat rincian paket</p>
+          <ul class="card-text">
+            <li>FREE HTM</li>
+            <li>Sarapan</li>
+            <li>Tenda Naturehike V13</li>
+            <li>Kasur</li>
+            <li>Bantal dan Selimut</li>
+            <li>Meja dan Kursi</li>
+            <li>Rak</li>
+            <li>Teko Listrik</li>
+            <li>Lampu Tenda</li>
+            <li>Paket BBQ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-box">
+          <img src="GAMBAR PAKET B.webp" alt="Paket Glamping" />
+        </div>
+        <div class="content">
+          <h2>PAKET GLAMPING TERAS MERAPI B</h2>
+          <h1>PAKET GLAMPING B</h1>
+          <p>Klik untuk melihat rincian paket</p>
+          <ul class="card-text">
+            <li>FREE HTM</li>
+            <li>Sarapan</li>
+            <li>Tenda Naturehike V13</li>
+            <li>Kasur</li>
+            <li>Bantal dan Selimut</li>
+            <li>Meja dan Kursi</li>
+            <li>Rak</li>
+            <li>Teko Listrik</li>
+            <li>Lampu Tenda</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-box">
+          <img src="GAMBAR PAKET PREMIUM.webp" alt="Paket Glamping" />
+        </div>
+        <div class="content">
+          <h2>PAKET PREMIUM TERAS MERAPI</h2>
+          <h1>PAKET PREMIUM</h1>
+          <p>Klik untuk melihat rincian paket</p>
+          <ul class="card-text">
+            <li>FREE HTM</li>
+            <li>Sarapan Pagi</li>
+            <li>Fasilitas Wisata</li>
+            <li>Tenda Dome</li>
+            <li>Matras</li>
+            <li>Sleeping Bag</li>
+            <li>Lampu Tenda</li>
+            <li>Meja dan Kursi</li>
+            <li>Nasting Set/Grillpan Set</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-box">
+          <img src="GAMBAR PAKET MEDIUM.webp" alt="Paket Glamping" />
+        </div>
+        <div class="content">
+          <h2>PAKET PAKET MEDIUM TERAS MERAPI</h2>
+          <h1>PAKET PAKET MEDIUM</h1>
+          <p>Klik untuk melihat rincian paket</p>
+          <ul class="card-text">
+            <li>FREE HTM</li>
+            <li>Sarapan Pagi</li>
+            <li>Fasilitas Wisata</li>
+            <li>Tenda Dome</li>
+            <li>Matras</li>
+            <li>Sleeping Bag</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
